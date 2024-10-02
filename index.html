@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<script src="seedrandom.js" charset="utf-8"></script>
+<script src="generator.js" charset="utf-8"></script>
   <head>
-    <script src="seedrandom.js" charset="utf-8"></script>
-    <script src="generator.js" charset="utf-8"></script>
     <link rel="stylesheet" href="stylesheet.css">
     <meta charset="utf-8">
     <title></title>
@@ -52,41 +52,5 @@
         <td onclick="myFunction(this)" style="background-color:white" id="p139"></td>
       </tr>
     </table>
-
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <button class="modal-button" onclick="selectLanguage('English')">English</button>
-        <button class="modal-button" onclick="selectLanguage('Spanish')">Spanish</button>¨
-        <h1 id="languageText" class="language-text"></h1>
-      </div>
-    </div>
-
-    <script>
-      // Modal script
-      var modal = document.getElementById("myModal");
-      var languageText = document.getElementById("languageText");
-
-      window.onload = function() {
-        modal.style.display = "block";
-      }
-
-      function closeModal() {
-        modal.style.display = "none";
-      }
-
-      function selectLanguage(language) {
-        if (language == "English") {
-          languageText.innerText = "Whoever moves first is gay!";
-        } else if (language == "Spanish") {
-          languageText.innerText = "¡Quien se mueve primero es gay!";
-        }
-
-        var audio = new Audio('English.mp3');
-          audio.play()
-
-      }
-    </script>
-  </body>
+      </body>
 </html>
