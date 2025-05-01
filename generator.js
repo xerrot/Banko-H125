@@ -100,3 +100,33 @@ function update_plates() {
     nyfunktion(value, document.getElementById(key));
   }
 }
+
+function generateRandomName() {
+    // Nulstil til ægte tilfældighed for navnevalg
+    Math.seedrandom();
+    
+    // Liste af tilfældige navne
+    const fornavne = ["William", "Karl", "Emil", "Oscar", "Malthe", "Noah", "Valdemar", "Aksel", "August", "Oliver", 
+                      "Lucas", "Alfred", "Theo", "Elias", "Arthur", "Otto", "Elliot", "Felix", "Victor", "Magnus",
+                      "Ella", "Freja", "Alma", "Frida", "Agnes", "Luna", "Ida", "Nora", "Olivia", "Sofia",
+                      "Emma", "Clara", "Asta", "Alberte", "Karla", "Lily", "Ellie", "Anna", "Ellen", "Esther"];
+    
+    // Vælg tilfældigt fornavn
+    const fornavn = fornavne[Math.floor(Math.random() * fornavne.length)];
+    
+    // Sæt navnet i tekstboksen
+    document.getElementById('tekstboks').value = fornavn;
+    
+    // Sæt ny seed til pladegenerering
+    Math.seedrandom(fornavn);
+    update_plates();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('tekstboks').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            Math.seedrandom(this.value);
+            update_plates();
+        }
+    });
+});

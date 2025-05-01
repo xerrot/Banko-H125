@@ -5,16 +5,25 @@
   <head>
     <link rel="stylesheet" href="stylesheet.css">
     <meta charset="utf-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banko med MAGS</title>
   </head>
   <body>
     <h1> Banko med MAGS </h1>
+    
+
+
+    <div class="links">
+      <a href="https://github.com/mercantech/banko" target="_blank">GitHub Repository</a>
+      <a href="https://mercantec.notion.site/h1-banko" target="_blank">Opgavebeskrivelse</a>
+    </div>
     <br>
     <br>
 
     <div id="knapper">
     <input name="tekstboks" id="tekstboks" size=40 placeholder="skriv dit navn her"></input>
     <button id="knap" type="button" name="button" onclick="Math.seedrandom(tekstboks.value),update_plates()">Generer plader</button>
+    <button id="randomKnap" type="button" name="button" onclick="generateRandomName()">Tilfældigt id</button>
     </div>
     <h2>Banko</h2>
     <table id="p1">
@@ -52,5 +61,15 @@
         <td onclick="myFunction(this)" style="background-color:white" id="p139"></td>
       </tr>
     </table>
+    <br>
+    <br>
+    <div id="instructions">
+      <p>Skriv et navn i feltet og klik på "Generer plader" for at få din unikke bankoplade.</p>
+      <p>Klik på tallene for at markere dem når de bliver råbt op.</p>
+      <p>
+        <a href="rules.html" class="rules-link">Se bankoregler</a> | 
+        <a href="automation.html" class="rules-link">Guide til scraping</a>
+      </p>
+    </div>
       </body>
 </html>
